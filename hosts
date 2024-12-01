@@ -1,2 +1,2 @@
 [webservers]
-35.170.218.77 ansible_ssh_user=ubuntu ansible_ssh_pass=AAAAB3NzaC1yc2EAAAADAQABAAABAQC6gzA6p6dNOFyCZ3XF2sZdla5XZ0dD1+jVcgMFFWRe49GLskPME+N7ip89rHViWetjYssHZMwojVifNvDjsviWViiRqXui5ywzR6RF4joae8Y1PovudxB3rVNYZ2d5/lVlGrYlZCD8D5wT6UHOm0xej4QcreUwbdE5kpLSS7y5TZMy0+rQMelzPfeVairwJ1YtbS9u
+35.170.218.77 ansible_ssh_user=ubuntu ansible_ssh_pass=~/.ssh/authorized_keys
