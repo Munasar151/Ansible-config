@@ -1,2 +1,2 @@
 [webservers]
-3.231.74.8 ansible_ssh_user=ubuntu ansible_ssh_private_key=~/.ssh/newsecret.pem
+3.231.74.8 ansible_ssh_user=ubuntu ansible_ssh_pass=~/.ssh/newsecret.pem
