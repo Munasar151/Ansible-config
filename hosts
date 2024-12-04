@@ -1,2 +1,2 @@
 [webservers]
-3.231.74.8 ansible_ssh_user=munasar ansible_ssh_pass=password
+52.2.48.252 ansible_ssh_user=ubuntu ansible_ssh_private=~/.ssh/authorized_keys
