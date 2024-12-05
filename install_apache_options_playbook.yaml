@@ -11,15 +11,23 @@
         - RESTART APACHE2
 
     - name: APACHE2 LISTEN ON PORT 8081
-      lineinfile: dest=/etc/apache2/ports.conf regexp="^Listen 80" line="Listen 8081" state=present
+      lineinfile:
+        dest: /etc/apache2/ports.conf
+        regexp: "^Listen 80"
+        line: "Listen 8081"
+        state: present
       notify:
         - RESTART APACHE2
 
     - name: APACHE2 VIRTUALHOST ON PORT 8081
-      lineinfile: dest=/etc/apache2/sites-available/000-default.conf regexp="^<VirtualHost \*:80>" line="<VirtualHost *:8081>" state=present
+      lineinfile:
+        dest: /etc/apache2/sites-available/000-default.conf
+        regexp: "^<VirtualHost \*:80>"
+        line: "<VirtualHost *:8081>"
+        state: present
       notify:
         - RESTART APACHE2
-        
+
     - name: DEPLOY WEBSITE FILES
       copy:
         src: /home/test/JD-Sports
@@ -29,12 +37,12 @@
         mode: '0755'
 
     - name: SET DIRECTORY PERMISSIONS
-        file:
-          path: /var/www/html/
-          owner: www-data
-          group: www-data
-          mode: '0755'
-          recurse: yes
+      file:  # Fixed indentation
+        path: /var/www/html/
+        owner: www-data
+        group: www-data
+        mode: '0755'
+        recurse: yes
 
   handlers:
     - name: RESTART APACHE2
