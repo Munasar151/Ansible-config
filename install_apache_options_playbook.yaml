@@ -20,7 +20,7 @@
       notify:
         - RESTART APACHE2
         
-- name: DEPLOY WEBSITE FILES
+    - name: DEPLOY WEBSITE FILES
       copy:
         src: /home/test/JD-Sports
         dest: /var/www/html/
@@ -29,12 +29,12 @@
         mode: '0755'
 
     - name: SET DIRECTORY PERMISSIONS
-      file:
-        path: /var/www/html/
-        owner: www-data
-        group: www-data
-        mode: '0755'
-        recurse: yes
+        file:
+          path: /var/www/html/
+          owner: www-data
+          group: www-data
+          mode: '0755'
+          recurse: yes
 
   handlers:
     - name: RESTART APACHE2
