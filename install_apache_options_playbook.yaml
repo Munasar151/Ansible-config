@@ -28,13 +28,11 @@
       notify:
         - RESTART APACHE2
 
-    - name: DEPLOY WEBSITE FILES
+    - name: DEPLOY JD SPORTS WEBSITE FILES
       copy:
         src: /home/test/JD-Sports
         dest: /var/www/html/
-        owner: www-data
-        group: www-data
-        mode: '0755'
+        
 
     - name: SET DIRECTORY PERMISSIONS
       file:  # Fixed indentation
