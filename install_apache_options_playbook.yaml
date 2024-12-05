@@ -29,9 +29,10 @@
         - RESTART APACHE2
 
     - name: DEPLOY JD SPORTS WEBSITE FILES
-      copy:
-        src: /home/test/JD-Sports
-        dest: /var/www/html/
+      ansible.builtin.git:
+        repo: 'https://github.com/Munasar151/JD-Sports.git'
+        dest: '/var/www/html/'
+        version: 'main'
         
 
     - name: SET DIRECTORY PERMISSIONS
