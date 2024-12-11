@@ -20,8 +20,6 @@
       notify:
         - RESTART APACHE2
 
-
-
   handlers:
     - name: RESTART APACHE2
       service: name=apache2 state=restarted
