@@ -28,14 +28,6 @@
         force: 'yes'
         
 
-    - name: SET DIRECTORY PERMISSIONS
-      file:  # Fixed indentation
-        path: /var/www/html/
-        owner: www-data
-        group: www-data
-        mode: '0755'
-        recurse: yes
-
   handlers:
     - name: RESTART APACHE2
       service: name=apache2 state=restarted
