@@ -19,7 +19,11 @@
       lineinfile: dest=/etc/apache2/sites-available/000-default.conf regexp="^<VirtualHost \*:80>" line="<VirtualHost *:8081>" state=present
       notify:
         - RESTART APACHE2
-    
+
+    - name: MARK /var/www/html AS A SAFE DIRECTORY
+      ansible.builtin.command:
+        cmd: git config --global --add safe.directory /var/www/html
+
     - name: DEPLOY JD SPORTS WEBSITE FILES
       ansible.builtin.git:
         repo: 'https://github.com/Munasar151/JD-Sports.git'
